@@ -21,14 +21,13 @@ unsigned int i, j;
 	
 	LPC_PINCON->PINSEL4&=~((1 <<19)|(1<<18));	//LED p2.9
 	
-
 	while(1){
 		
 		if(!(LPC_GPIO2->FIOPIN & (1<<12))){
-						led_on();
+		 led_on();
 		}
 		else{
-		led_off();
+		 led_off();
 		}
 	
 
