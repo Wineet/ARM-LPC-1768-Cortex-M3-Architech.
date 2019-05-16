@@ -1,6 +1,6 @@
 #include<LPC17xx.h>
 
-/*
+/* V1.1
 * ADC Scanning and posting Data ON UART*/
 
 void led_off(){
@@ -25,7 +25,7 @@ void delay()
 void uart_send_ch( unsigned char data){			//Send a char 		
 
 	while(!(LPC_UART3->LSR & (1<<5)));			// Wait Upto LAst Transmission to complete
-										LPC_UART3->THR=data;
+	LPC_UART3->THR=data;
 
 }
 
@@ -33,8 +33,8 @@ unsigned char uart_rec()
 {
 	unsigned char data;
           while(!(LPC_UART3->LSR & (1<<0)));			//Receive Polling 
-					data=LPC_UART3->RBR;	
-return data;
+       data=LPC_UART3->RBR;	
+       return data;
 
 }
 
@@ -43,7 +43,7 @@ void uart_send_str( unsigned char *ptr){			//Send a String
 	while(*ptr)
 	{
 	while(!(LPC_UART3->LSR & (1<<5)));			// Wait Upto LAst Transmission to complete
-										LPC_UART3->THR=*ptr;
+	LPC_UART3->THR=*ptr;
 		ptr++;
 	}
 	
