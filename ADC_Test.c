@@ -68,7 +68,7 @@ LPC_PINCON->PINSEL0|=(1<<1)|(1<<3);				//RX3 TX3 Setting
 	LPC_UART3->LCR |=(1<<0)|(1<<1);					 // 8 bit char length
 	LPC_UART3->LCR &=~ (1<<7);							 // Disabling bit to do read Write operation
 }
-
+ 
 
 
 void main()
